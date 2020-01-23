@@ -3,5 +3,5 @@ package com.springboot.microservices.example.forex.springbootmicroserviceforexse
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ExchangeValueRepository extends JpaRepository<ExchangeValue, Long> {
-    ExchangeValue find_By_From_And_To(String from, String to);
+    ExchangeValue findByFromAndTo(String from, String to);
 }

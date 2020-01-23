@@ -15,10 +15,10 @@ public class ForexController {
     @Autowired
     private ExchangeValueRepository repository;
 
-    @GetMapping("/currency-exchange/from{from}/to/{to}")
+    @GetMapping("/currency-exchange/from/{from}/to/{to}")
     public ExchangeValue retrieve_Exchange_Value
             (@PathVariable String from, @PathVariable String to) {
-        ExchangeValue exchangeValue = repository.find_By_From_And_To(from, to);
+        ExchangeValue exchangeValue = repository.findByFromAndTo(from, to);
 
         exchangeValue.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
 
